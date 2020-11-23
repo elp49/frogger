@@ -24,14 +24,167 @@ class Q_State(State):
         state within the dictionary.
         '''
 
+        #//# ===== ===== ==== = === = === = ==== ===== ===== #\\#
+        #//# ===== = = == === ORIGINAL CODE === == = = ===== #\\#
+        #//# ===== ===== ==== = === = === = ==== ===== ===== #\\#
         # this simple key uses the 3 object characters above the frog
         # and combines them into a key string
+        # return ''.join([
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+        # ])
+        #//# ===== ===== ==== = === = === = ==== ===== ===== #\\#
+        #//# ===== = = == === ************* === == = = ===== #\\#
+        #//# ===== ===== ==== = === = === = ==== ===== ===== #\\#
+        
+
+
+        ## ===== ===== = ===== ===== ##
+        ## === == Frog Vision == === ##
+        ## ===== ===== = ===== ===== ##
+
+        # Original code is q2
+
+
+
+
+        # q3
+        #     -
+        #   - - -
+        # - - F - -
+
+        # return ''.join([
+        #     self.get(self.frog_x - 2, self.frog_y) or '_',  # left 2
+        #     self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+        #     self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+        #     self.get(self.frog_x + 2, self.frog_y) or '_',  # right 2
+
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+
+        #     self.get(self.frog_x, self.frog_y - 2) or '_',  # up 2
+        # ])
+
+
+
+
+        # q4
+        # - - - - - 
+        #   - - -
+        #     F
+
+        # Considers logs and grasshoppers
+        # return ''.join([
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+
+        #     self.get(self.frog_x - 2, self.frog_y - 2) or '_',  # up 2, left 2
+        #     self.get(self.frog_x - 1, self.frog_y - 2) or '_',  # up 2, left 1
+        #     self.get(self.frog_x, self.frog_y - 2) or '_',  # up 2
+        #     self.get(self.frog_x + 1, self.frog_y - 2) or '_',  # up 2, right 1
+        #     self.get(self.frog_x + 2, self.frog_y - 2) or '_',  # up 2, right 2
+        # ])
+
+
+
+        # q3.1
+        #     -
+        #   - - -
+        # - - F - -
+
+        # return ''.join([
+        #     self.get(self.frog_x - 2, self.frog_y) or '_',  # left 2
+        #     self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+        #     self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+        #     self.get(self.frog_x + 2, self.frog_y) or '_',  # right 2
+
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+
+        #     self.get(self.frog_x, self.frog_y - 2) or '_',  # up 2
+        # ])
+
+
+
+
+        # q5
+        #   - - -
+        #   - - -
+        # - - F - -
+
+        # return ''.join([
+        #     self.get(self.frog_x - 2, self.frog_y) or '_',  # left 2
+        #     self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+        #     self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+        #     self.get(self.frog_x + 2, self.frog_y) or '_',  # right 2
+
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+
+        #     self.get(self.frog_x - 1, self.frog_y - 2) or '_',  # up 2, left 1
+        #     self.get(self.frog_x, self.frog_y - 2) or '_',      # up 2
+        #     self.get(self.frog_x + 1, self.frog_y - 2) or '_',  # up 2, right 1
+        # ])
+
+
+
+
+        # q6
+        # - - - - -
+        # - - - - -
+        # - - F - -
+
+        # return ''.join([
+        #     self.get(self.frog_x - 2, self.frog_y) or '_',  # left 2
+        #     self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+        #     self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+        #     self.get(self.frog_x + 2, self.frog_y) or '_',  # right 2
+
+        #     self.get(self.frog_x - 2, self.frog_y - 1) or '_',  # up 1, left 2
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+        #     self.get(self.frog_x + 2, self.frog_y - 1) or '_',  # up 1, right 2
+
+        #     self.get(self.frog_x - 2, self.frog_y - 2) or '_',  # up 2, left 2
+        #     self.get(self.frog_x - 1, self.frog_y - 2) or '_',  # up 2, left 1
+        #     self.get(self.frog_x, self.frog_y - 2) or '_',      # up 2
+        #     self.get(self.frog_x + 1, self.frog_y - 2) or '_',  # up 2, right 1
+        #     self.get(self.frog_x + 2, self.frog_y - 2) or '_',  # up 2, right 2
+        # ])
+
+
+
+        # q8
+        #   - - -
+        #   - F -
+        #   - - -
+
         return ''.join([
-            self.get(self.frog_x - 1, self.frog_y - 1) or '_',
-            self.get(self.frog_x, self.frog_y - 1) or '_',
-            self.get(self.frog_x + 1, self.frog_y - 1) or '_',
+            self.get(self.frog_x - 1, self.frog_y + 1) or '_',  # down 1, left 1
+            self.get(self.frog_x, self.frog_y + 1) or '_',      # down 1
+            self.get(self.frog_x + 1, self.frog_y + 1) or '_',  # down 1, right 1
+
+            self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+            self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+
+            self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+            self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+            self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
         ])
 
+
+
+
+        ## ===== ===== = ===== ===== ##
+        ## === == =========== == === ##
+        ## ===== ===== = ===== ===== ##
+    
     def reward(self):
         '''Returns a reward value for the state.'''
 
@@ -44,6 +197,7 @@ class Q_State(State):
 
 
 class Agent:
+    DEFAULT_E_INTERVAL = 1000
 
     def __init__(self, train=None):
 
@@ -64,6 +218,13 @@ class Agent:
             os.path.realpath(__file__)), 'train', self.name + '.json')
 
         self.load()
+
+        self.prev_qstate = None
+        self.prev_action = None
+        self.epsilon = 1 # Epsilon determines if agent will explore or exploit.
+        self.e_decrement = 0.1 # Value to decrement epsilon after an interval.
+        self.e_interval = Agent.DEFAULT_E_INTERVAL # Number of choices before decrementing epsilon.
+        self.alpha = 1 # 1 means we completely abandon the old value.
 
     def load(self):
         '''Loads the Q-table from the JSON file'''
@@ -99,4 +260,103 @@ class Agent:
         choice among the possible actions. You will need to augment
         the code to implement Q-learning within the agent.
         '''
-        return random.choice(State.ACTIONS)
+        # return random.choice(State.ACTIONS)
+
+        # Construct internal Q-State using given state string.
+        qstate = Q_State(state_string)
+
+        if self.train:
+            # Train the Q-table.
+            action = self.train_qtable(qstate)
+            self.save()
+        else:
+            try:
+                # Get the optimal next action.
+                action = self.optimal_next_action(qstate)
+            except KeyError:
+                # Q-state is not in Q-table, choose random action.
+                action = random.choice(State.ACTIONS)
+        return action
+
+    def train_qtable(self, qstate):
+        
+        # Test if Q-state does not already exist in Q-table.
+        if qstate.key not in self.q:
+            self.initialize_qstate(qstate)
+        
+        # Use epsilon to decide if agent will Explore or Exploit.
+        self.decrement_epsilon_interval()
+        next_action = (self.optimal_next_action(qstate)
+            if random.random() > self.epsilon
+            else random.choice(State.ACTIONS))
+        
+        if self.prev_qstate and self.prev_action:
+            self.update_qtable(qstate, next_action)
+        
+        # Update previous Q-state and action.
+        self.prev_qstate = qstate
+        self.prev_action = next_action
+
+        return next_action
+
+    def decrement_epsilon_interval(self):
+        '''Decrement the epsilon interval value by 1. If the interval drops to 
+        zero, then decrement the epsilon value and reset the interval.'''
+        # Take care of epsilon (Explore/Exploit) factor.
+        # Decrement epsilon by e_decrement after e_interal.
+        if self.e_interval > 0:
+            self.e_interval -= 1
+        else:
+            self.epsilon -= self.e_decrement
+            self.e_interval = Agent.DEFAULT_E_INTERVAL
+
+    def update_qtable(self, qstate, next_action):
+        '''Update the Q-value for the previous state-action pair in the Q-table.'''
+        old_qval = self.qval(self.prev_qstate, self.prev_action) # If no previous state, then returns 0.
+        reward = qstate.reward() # The reward received for taking the previous action.
+        optimal_qval = self.qval(qstate, next_action)
+        
+        # Formulate the new Q-value for the previous action.
+        new_qval = ((1 - self.alpha) * old_qval) + (self.alpha * (reward + optimal_qval))
+        self.set_new_qval(new_qval)
+
+    def optimal_next_action(self, qstate):
+        '''optimal_next_action() -> optimal next action
+        Determine the optimal next action at the given state.'''
+        action_dict = self.q[qstate.key] # { 'd': 0, 'u': 0, 'r': 0, ... }
+        action_keys = list(action_dict.keys()) # [ 'd', 'u', 'r', 'l', '_' ]
+        action_vals = list(action_dict.values()) # [ 0, 0, 0, ... ]
+
+        # Find the optimal action which maximizes the Q-value.
+        max_val_index = action_vals.index(max(action_vals))
+        optimal_action = action_keys[max_val_index]
+
+        # # Initialize the optimal action and Q-value.
+        # optimal_action = action_keys[0]
+        # optimal_qval = action_dict[optimal_action]
+
+        # # Find the real optimal action and Q-value.
+        # for i in range(1, len(action_keys)):
+        #     this_qval = action_dict[action_keys[i]]
+        #     # Test if this action's Q-value is greater than the optimal.
+        #     if this_qval > optimal_qval:
+        #         optimal_action = action_keys[i]
+        #         optimal_qval = this_qval
+
+        return optimal_action
+
+    def qval(self, qstate, action):
+        '''Return the Q-value for the given action on the given state.'''
+        return self.q[qstate.key][action] if qstate and action else 0
+
+    def set_new_qval(self, qvalue):
+        '''Set the given Q value for the given action at the given state.'''
+        self.q[self.prev_qstate.key][self.prev_action] = qvalue
+
+    def initialize_qstate(self, qstate):
+        '''Initialize the Q-state as a key to a dictionary of actions within
+        the Q-table.'''
+        if qstate.key not in self.q:
+            self.q[qstate.key] = {}
+            for s in State.ACTIONS:
+                self.q[qstate.key][s] = 0
