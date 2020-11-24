@@ -1,0 +1,205 @@
+
+
+
+
+## ------------------------- ##
+## ----------easy----------- ##
+## ------------------------- ##
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 247750
+	time	= 0.22 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 72270
+	time	= 0.29 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 39070
+	time	= 0.29 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 21840
+	time	= 0.31 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 10445
+	time	= 0.31 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 7160
+	time	= 0.32 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 4505
+	time	= 0.33 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 2455
+	time	= 0.36 minutes
+
+
+
+## ------------------------- ##
+## ---------medium---------- ##
+## ------------------------- ##
+
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 280755
+	time	= 0.35 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 49265
+	time	= 0.39 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 11180
+	time	= 0.4 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 4175
+	time	= 0.41 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 2425
+	time	= 0.43 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 605
+	time	= 0.45 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 0
+	time	= 0.43 minutes
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 0
+	time	= 0.46 minutes
+
+
+
+## ------------------------- ##
+## -----------hard---------- ##
+## ------------------------- ##
+
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 260540
+	time	= 0.45 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 27185
+	time	= 0.5 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 3110
+	time	= 0.51 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 0
+	time	= 0.52 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 600
+	time	= 0.53 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 0
+	time	= 0.51 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 0
+	time	= 0.52 minutes
+
+Run:TRAINING_FILE=qx.1
+	SCREEN	= hard
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 0
+	time	= 0.54 minutes

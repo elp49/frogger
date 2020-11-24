@@ -34,18 +34,48 @@ if __name__ == '__main__':
 
 
     ## ===== ===== = ===== ===== ##
-    SCREEN = 'medium' # finished after 19.04 minutes with 
-    # a score of 969605
-    STEPS = 100000
-    TRAINING_FILE = 'q8'
-    RESTART = 4
+    SCREEN = 'hard'
+    STEPS = 3000
+
+
+    # -----------------------------
+    # TRAINING_FILE = 'q9_alpha0.1'
+    # TRAINING_FILE = 'q9_alpha0.2'
+    # TRAINING_FILE = 'q9_alpha0.3'
+    # TRAINING_FILE = 'q9_alpha0.4'
+    # TRAINING_FILE = 'q9_alpha0.5'
+    # -----------------------------
+    
+
+    TRAINING_FILE = 'qx.1'
+    # TRAINING_FILE = 'qx.2'
+    # TRAINING_FILE = 'qx.3'
+    # TRAINING_FILE = 'qx.4'
+    SPEED = 'fast'
+    RESTART = 8 # 1, 2, 3, 4, 5, 6, 7, 8
+    # OUTPUT = 'graphic'
     OUTPUT = 'text'
+
+
+    # --------------------------------------
+    # output_file = 'test_runs_alpha0.1.txt'
+    # output_file = 'test_runs_alpha0.2.txt'
+    # output_file = 'test_runs_alpha0.3.txt'
+    # output_file = 'test_runs_alpha0.4.txt'
+    # output_file = 'test_runs_alpha0.5.txt'
+    # --------------------------------------
+
+
+    output_file = 'qx.1.log'
+    # output_file = 'qx.2.log'
+    # output_file = 'qx.3.log'
+    # output_file = 'qx.4.log'
 
     player = args.get('player', 'agent')
     screen = args.get('screen', SCREEN)
     steps = args.get_int('steps', STEPS)
     train = args.get('train', TRAINING_FILE)
-    speed = args.get('speed', 'fast')
+    speed = args.get('speed', SPEED)
     restart = args.get_int('restart', RESTART)
     output = args.get('output', OUTPUT)
     ## ===== ===== = ===== ===== ##
@@ -87,3 +117,21 @@ if __name__ == '__main__':
 
 
     print('\t'.join([str(score) for score in scores]))
+
+
+    ## ===== ===== = ===== ===== ##
+    ## === == =========== == === ##
+    ## ===== ===== = ===== ===== ##
+    with open(output_file, 'a') as f:
+        f.write(f'\r\nRun:TRAINING_FILE={TRAINING_FILE}\n')
+        f.write(f'\tSCREEN\t= {SCREEN}\n')
+        f.write(f'\tSTEPS\t= {STEPS}\n')
+        f.write(f'\tRESTART\t= {restart}\n')
+        score = '\t'.join([str(score) for score in scores])
+        f.write(f'\tscor\t= {score}\n')
+        f.write(f'\ttime\t= {round(minutes, 2)} minutes\n')
+        interval = Agent.DEFAULT_E_INTERVAL
+        count = interval
+        f.write(f'## == Average Rewards per {interval} episodes == ##')
+        for r in agent.episode_rewards:
+            f.write(f'\t{count} - {r/interval}')

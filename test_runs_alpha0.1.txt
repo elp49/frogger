@@ -1,0 +1,112 @@
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 15000
+	RESTART	= 1
+	scor	= 3341385
+	time	= 2.07 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 15000
+	RESTART	= 4
+	scor	= 423235
+	time	= 2.17 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 15000
+	RESTART	= 8
+	scor	= 172595
+	time	= 2.3 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= medium
+	STEPS	= 15000
+	RESTART	= 1
+	scor	= 3022885
+	time	= 2.63 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= medium
+	STEPS	= 15000
+	RESTART	= 4
+	scor	= 265855
+	time	= 2.91 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= medium
+	STEPS	= 15000
+	RESTART	= 8
+	scor	= 73865
+	time	= 2.98 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= hard
+	STEPS	= 15000
+	RESTART	= 1
+	scor	= 2779410
+	time	= 3.04 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= hard
+	STEPS	= 15000
+	RESTART	= 4
+	scor	= 187955
+	time	= 3.23 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= hard
+	STEPS	= 15000
+	RESTART	= 8
+	scor	= 45415
+	time	= 3.43 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 50
+	RESTART	= 8
+	scor	= 0
+	time	= 0.21 minutes
+
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 500
+	RESTART	= 8
+	scor	= 505
+	time	= 0.09 minutes
+
+
+
+## ===== SPECIAL RUNS ===== ##
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= easy
+	STEPS	= 50000
+	RESTART	= 8
+	scor	= 1459440
+	time	= 11.43 minutes
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= medium
+	STEPS	= 50000
+	RESTART	= 8
+	scor	= 1070140
+	time	= 31.07 minutes
+
+Run:TRAINING_FILE=q9_alpha0.1
+	SCREEN	= hard
+	STEPS	= 50000
+	RESTART	= 8
+	scor	= 357005
+	time	= 42.8 minutes

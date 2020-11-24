@@ -165,6 +165,25 @@ class Q_State(State):
         #   - F -
         #   - - -
 
+        # return ''.join([
+        #     self.get(self.frog_x - 1, self.frog_y + 1) or '_',  # down 1, left 1
+        #     self.get(self.frog_x, self.frog_y + 1) or '_',      # down 1
+        #     self.get(self.frog_x + 1, self.frog_y + 1) or '_',  # down 1, right 1
+
+        #     self.get(self.frog_x - 1, self.frog_y) or '_',  # left 1
+        #     self.get(self.frog_x + 1, self.frog_y) or '_',  # right 1
+
+        #     self.get(self.frog_x - 1, self.frog_y - 1) or '_',  # up 1, left 1
+        #     self.get(self.frog_x, self.frog_y - 1) or '_',      # up 1
+        #     self.get(self.frog_x + 1, self.frog_y - 1) or '_',  # up 1, right 1
+        # ])
+
+
+        # q9
+        #   - - -
+        #   - F -
+        #   - - -
+
         return ''.join([
             self.get(self.frog_x - 1, self.frog_y + 1) or '_',  # down 1, left 1
             self.get(self.frog_x, self.frog_y + 1) or '_',      # down 1
@@ -185,7 +204,7 @@ class Q_State(State):
         ## === == =========== == === ##
         ## ===== ===== = ===== ===== ##
     
-    def reward(self):
+    def reward(self, prev_distance_to_goal=None):
         '''Returns a reward value for the state.'''
 
         if self.at_goal:
@@ -193,11 +212,20 @@ class Q_State(State):
         elif self.is_done:
             return -10
         else:
-            return 0
+            # Test the Frog's change in position from the goal.
+            if not prev_distance_to_goal:
+                return 0
+            elif self.frog_y == prev_distance_to_goal:
+                return 0
+            elif self.frog_y < prev_distance_to_goal:
+                return 1
+            else:
+                return -1
 
 
 class Agent:
     DEFAULT_E_INTERVAL = 1000
+    INITIAL_EPSILON = 1
 
     def __init__(self, train=None):
 
@@ -221,10 +249,13 @@ class Agent:
 
         self.prev_qstate = None
         self.prev_action = None
-        self.epsilon = 1 # Epsilon determines if agent will explore or exploit.
+        self.epsilon = Agent.INITIAL_EPSILON # Epsilon determines if agent will explore or exploit.
         self.e_decrement = 0.1 # Value to decrement epsilon after an interval.
         self.e_interval = Agent.DEFAULT_E_INTERVAL # Number of choices before decrementing epsilon.
-        self.alpha = 1 # 1 means we completely abandon the old value.
+        self.alpha = 0.1 # 1 means we completely abandon the old value.
+        self.prev_distance_to_goal = None
+        self.episode_num = 1
+        self.episode_rewards = [0]
 
     def load(self):
         '''Loads the Q-table from the JSON file'''
@@ -276,6 +307,9 @@ class Agent:
             except KeyError:
                 # Q-state is not in Q-table, choose random action.
                 action = random.choice(State.ACTIONS)
+
+        self.prev_distance_to_goal = qstate.frog_y
+
         return action
 
     def train_qtable(self, qstate):
@@ -285,13 +319,17 @@ class Agent:
             self.initialize_qstate(qstate)
         
         # Use epsilon to decide if agent will Explore or Exploit.
-        self.decrement_epsilon_interval()
-        next_action = (self.optimal_next_action(qstate)
-            if random.random() > self.epsilon
-            else random.choice(State.ACTIONS))
+        if self.epsilon > 0:
+            self.decrement_epsilon_interval()
+            next_action = (self.optimal_next_action(qstate)
+                if random.random() > self.epsilon
+                else random.choice(State.ACTIONS))
+        else:
+            next_action = self.optimal_next_action(qstate)
         
         if self.prev_qstate and self.prev_action:
-            self.update_qtable(qstate, next_action)
+            reward = self.update_qtable(qstate, next_action)
+            self.episode_rewards[self.episode_num] += reward
         
         # Update previous Q-state and action.
         self.prev_qstate = qstate
@@ -304,21 +342,25 @@ class Agent:
         zero, then decrement the epsilon value and reset the interval.'''
         # Take care of epsilon (Explore/Exploit) factor.
         # Decrement epsilon by e_decrement after e_interal.
-        if self.e_interval > 0:
-            self.e_interval -= 1
-        else:
-            self.epsilon -= self.e_decrement
+        self.e_interval = round(self.e_interval - 1, 1)
+        # Test if new episode beginning.
+        if self.e_interval <= 0:
+            self.epsilon = round(self.epsilon - self.e_decrement, 1)
             self.e_interval = Agent.DEFAULT_E_INTERVAL
+            self.episode_rewards.append(0)
+            self.episode_num += 1
 
     def update_qtable(self, qstate, next_action):
         '''Update the Q-value for the previous state-action pair in the Q-table.'''
         old_qval = self.qval(self.prev_qstate, self.prev_action) # If no previous state, then returns 0.
-        reward = qstate.reward() # The reward received for taking the previous action.
+        reward = qstate.reward(self.prev_distance_to_goal) # The reward received for taking the previous action.
+
         optimal_qval = self.qval(qstate, next_action)
         
         # Formulate the new Q-value for the previous action.
         new_qval = ((1 - self.alpha) * old_qval) + (self.alpha * (reward + optimal_qval))
         self.set_new_qval(new_qval)
+        return reward
 
     def optimal_next_action(self, qstate):
         '''optimal_next_action() -> optimal next action

@@ -1,0 +1,14 @@
+
+Run:TRAINING_FILE=q9_alpha0.3
+	SCREEN	= easy
+	STEPS	= 15000
+	RESTART	= 1
+	scor	= 3085300
+	time	= 5.77 minutes
+
+Run:TRAINING_FILE=q9_alpha0.3
+	SCREEN	= easy
+	STEPS	= 15000
+	RESTART	= 4
+	scor	= 187070
+	time	= 2.29 minutes

@@ -1,0 +1,149 @@
+
+
+
+
+## ------------------------- ##
+## ----------easy----------- ##
+## ------------------------- ##
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 222250
+	time	= 0.23 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 67300
+	time	= 0.3 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 40675
+	time	= 0.29 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 14515
+	time	= 0.31 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 15365
+	time	= 0.3 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 3670
+	time	= 0.31 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 6225
+	time	= 0.32 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 4275
+	time	= 0.35 minutes
+
+
+
+## ------------------------- ##
+## ---------medium---------- ##
+## ------------------------- ##
+
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 277065
+	time	= 0.35 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 44715
+	time	= 0.43 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 6770
+	time	= 0.44 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 3665
+	time	= 0.47 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 1775
+	time	= 0.61 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 1735
+	time	= 0.49 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 0
+	time	= 0.45 minutes
+
+
+Run:TRAINING_FILE=qx.2
+	SCREEN	= medium
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 0
+	time	= 0.6 minutes
+
+
+
+## ------------------------- ##
+## -----------hard---------- ##
+## ------------------------- ##
+

@@ -1,0 +1,71 @@
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 1
+	scor	= 255950
+	time	= 0.24 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 2
+	scor	= 79440
+	time	= 0.27 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 3
+	scor	= 23870
+	time	= 0.29 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 4
+	scor	= 14230
+	time	= 0.28 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 5
+	scor	= 5220
+	time	= 0.31 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 6
+	scor	= 5435
+	time	= 0.29 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 7
+	scor	= 2810
+	time	= 0.32 minutes
+
+
+Run:TRAINING_FILE=qx.4
+	SCREEN	= easy
+	STEPS	= 3000
+	RESTART	= 8
+	scor	= 4160
+	time	= 0.33 minutes
+
+
+
+## ------------------------- ##
+## ------------------------- ##
+## ------------------------- ##
+
